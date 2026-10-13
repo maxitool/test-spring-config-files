@@ -46,6 +46,11 @@ app:
     topic:
       email-dto: email-dto
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
 eureka:
   client:
     service-url:
