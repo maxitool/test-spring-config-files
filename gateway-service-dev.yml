@@ -138,7 +138,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, circuitbreakers, circuitbreakerevents, logfile
+        include: health, circuitbreakers, circuitbreakerevents
   endpoint:
     health:
       show-details: always
@@ -153,10 +153,6 @@ springdoc:
         url: /v3/api-docs/user-service
       - name: notification-service
         url: /v3/api-docs/notification-service
-
-logging:
-  file:
-    name: /app/shared-logs/common.log
 
 eureka:
   client:
