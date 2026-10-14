@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <property name="LOG_FILE" value="${LOGGING_FILE_NAME}"/>
+	<springProperty scope="context" name="APP_NAME" source="spring.application.name" defaultValue="unknown-service"/>
 
     <appender name="jsonFile" class="ch.qos.logback.core.FileAppender">
         <file>${LOG_FILE}</file> 
@@ -8,8 +9,13 @@
             <providers>
                 <timestamp><timeZone>UTC</timeZone></timestamp>
                 <logLevel/>
-                <!-- Автоматически подставляет spring.application.name каждого сервиса -->
-                <contextName><fieldName>service</fieldName></contextName>
+                <pattern>
+                    <pattern>
+                        {
+                          "service": "${APP_NAME}"
+                        }
+                    </pattern>
+                </pattern>
                 <threadName/>
                 <loggerName/>
                 <message/>
