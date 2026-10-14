@@ -3,9 +3,7 @@
     <property name="LOG_FILE" value="${LOGGING_FILE_NAME}"/>
 
     <appender name="jsonFile" class="ch.qos.logback.core.FileAppender">
-        <file>${LOG_FILE}</file>
-        <!-- prudent=true гарантирует безопасную параллельную запись нескольких JVM в один файл -->
-        <prudent>true</prudent> 
+        <file>${LOG_FILE}</file> 
         <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <timestamp><timeZone>UTC</timeZone></timestamp>
