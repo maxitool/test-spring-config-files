@@ -35,7 +35,7 @@ spring:
       allowed-headers: "*"
 
 logging:
-  config: "${CONFIG_SERVICE_HOST}:${CONFIG_SERVICE_PORT}/${GIT_CONFIG_LOG_XML_PATH}"
+  config: "${CONFIG_SERVICE_HOST}:${CONFIG_SERVICE_PORT}/${spring.application.name}/${GIT_CONFIG_LOG_XML_PATH}"
 
 app:
   kafka:
