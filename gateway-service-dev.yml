@@ -110,6 +110,9 @@ spring:
                 allowedHeaders: "*"
                 allowCredentials: true
 
+logging:
+  config: "${CONFIG_SERVICE_HOST}:${CONFIG_SERVICE_PORT}/${spring.application.name}/${GIT_CONFIG_LOG_XML_PATH}"
+
 resilience4j:
   timelimiter:
     instances:
