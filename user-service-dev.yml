@@ -5,6 +5,18 @@ server:
 spring:
   application:
     name: user-service
+
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      timeout: 10
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+
   kafka:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -61,7 +73,7 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://discovery-service:8761/eureka/
+      defaultZone: ${EUREKA_URL}/eureka/
     registry-fetch-interval-seconds: 5
   instance:
     prefer-ip-address: true

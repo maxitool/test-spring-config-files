@@ -162,5 +162,5 @@ eureka:
     register-with-eureka: false
     fetch-registry: true
     service-url:
-      defaultZone: http://discovery-service:8761/eureka/
+      defaultZone: ${EUREKA_URL}/eureka/
     registry-fetch-interval-seconds: 5
